@@ -81,6 +81,12 @@ explore: products {
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
     relationship: many_to_one
   }
+  join: fact_product_brand_cat {
+    type: left_outer
+    sql_on: ${products.brand} = ${fact_product_brand_cat.product_brand}
+    AND ${products.category} = ${fact_product_brand_cat.product_category};;
+    relationship: many_to_one
+  }
 }
 
 explore: users {}
