@@ -6,9 +6,16 @@ view: fact_product_brand_cat {
   }
 
   dimension: product_brand {
-    primary_key: yes
+    # primary_key: yes
     type: string
     sql: ${TABLE}.product_brand ;;
+  }
+
+  dimension: pk_dim {
+    hidden: yes
+    primary_key: yes
+    type: string
+    sql: ${product_brand}||${product_category}||${product_department} ;;
   }
 
   dimension: product_category {

@@ -12,6 +12,10 @@ datagroup: the_look_demo_default_datagroup {
   max_cache_age: "900 hours"
 }
 
+datagroup: no_cache {
+  max_cache_age: "0 hours"
+}
+
 persist_with: the_look_demo_default_datagroup
 
 # Explores allow you to join together different views (database tables) based on the
