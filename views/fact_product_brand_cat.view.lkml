@@ -6,6 +6,7 @@ view: fact_product_brand_cat {
   }
 
   dimension: product_brand {
+    primary_key: yes
     type: string
     sql: ${TABLE}.product_brand ;;
   }
@@ -21,6 +22,7 @@ view: fact_product_brand_cat {
   }
 
   dimension: count {
+    hidden: yes
     type: number
     sql: ${TABLE}.Count ;;
   }
