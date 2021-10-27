@@ -26,8 +26,19 @@ view: fact_product_brand_cat {
   }
 
   dimension: total_cost {
+    hidden: yes
     type: number
     sql: ${TABLE}.total_cost ;;
+  }
+
+  measure: average_cost_per_brand {
+    type: average
+    sql: ${total_cost} ;;
+  }
+
+  measure: average_products_per_brand {
+    type: average
+    sql: ${count} ;;
   }
 
   set: detail {
